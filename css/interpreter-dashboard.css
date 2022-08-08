@@ -80,13 +80,11 @@ right: 0;
 }
 
 .inboundcontrols {
-border:  solid 2px #333;
-border-radius: 10px;
+
 }
 
 .outboundcontrols {
-border:  solid 2px #333;
-border-radius: 10px;
+
 }
 
 .footer {
@@ -125,7 +123,7 @@ border-radius: 10px;
 
 /* CONTROLS */
 .controlsType{
-font-family: Ovo, serif;
+font-family: 'Roboto', Helvetica, sans-serif;
 font-weight: bold;
 font-size: 30px;
 color: #121212;
@@ -166,199 +164,24 @@ padding: 10px;
 
 .inbound_session_btns{
 cursor:  pointer;
-width: 100%;
-height: 100%;
-display: inline-block;
-background: rgba(255,255,255,0.3);
+
 }
 
 .outbound_session_btns{
 cursor:  pointer;
-width: 100%;
-height: 100%;
-display: inline-block;
-background: rgba(255,255,255,0.3);
+
 }
 
-/*.btn-txt{
-	padding-left: 10px;
-	display: inline-block;
-}
-  
-  .icon::before {
-    display: inline-block;
-     text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-  }
 
-  .playerbtn {
-    cursor: pointer;
-    height: 30px;
-    font-size: 18px;
-    min-width: 150px;
-    max-width: 250px;
-    background-color: transparent;
-    border: none;
-    align-content: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
-  .playerbtn button{
-    align-content: center;
-  }
-
-   .ibcamera-tog:before {
-  font: var(--fa-font-solid);
-  content: "\f03d";
-  color: #FFF;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  } 
-
-  .ibcamera-tog.is-active:before {
-  font: var(--fa-font-solid);
-  content: "\f4e2";
-  color: #ec6c70;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  }
-
-  .obcamera-tog:before {
-  font: var(--fa-font-solid);
-  content: "\f03d";
-  color: #FFF;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  } 
-
-  .obcamera-tog.is-active:before {
-  font: var(--fa-font-solid);
-  content: "\f4e2";
-  color: #ec6c70;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  }
-
-  .ibmic-tog:before {
-  font: var(--fa-font-solid);
-  content: "\f130";
-  color: #FFF;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  } 
-
-  .ibmic-tog.is-active:before {
-  font: var(--fa-font-solid);
-  content: "\f131";
-  color: #ec6c70;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  }
-	
-  .obmic-tog:before {
-  font: var(--fa-font-solid);
-  content: "\f130";
-  color: #FFF;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  } 
-
-  .obmic-tog.is-active:before {
-  font: var(--fa-font-solid);
-  content: "\f131";
-  color: #ec6c70;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  }
-
- .iboutput-tog:before {
-  font: var(--fa-font-solid);
-  content: "\f028";
-  color: #FFF;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  } 
-
-  .iboutput-tog.is-active:before {
-  font: var(--fa-font-solid);
-  content: "\f6a9";
-  color: #ec6c70;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  }
-
-  .oboutput-tog:before {
-  font: var(--fa-font-solid);
-  content: "\f028";
-  color: #FFF;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  } 
-
-  .oboutput-tog.is-active:before {
-  font: var(--fa-font-solid);
-  content: "\f6a9";
-  color: #ec6c70;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  }
-
-  .ibfullscreen-tog:before {
-  font: var(--fa-font-solid);
-  content: "\f065";
-  color: #FFF;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  } 
-
-  .ibfullscreen-tog.is-active:before {
-  font: var(--fa-font-solid);
-  content: "\f065";
-  color: #FFF;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  }
-
-  .obfullscreen-tog:before {
-  font: var(--fa-font-solid);
-  content: "\f065";
-  color: #FFF;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  } 
-
-  .obfullscreen-tog.is-active:before {
-  font: var(--fa-font-solid);
-  content: "\f065";
-  color: #FFF;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  }
-
-
-  .ibdisconnect:before {
-  font: var(--fa-font-solid);
-  content: "\e552";
-  color: #ec6c70;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  } 
-
-  .ibisconnect.is-active:before {
-  font: var(--fa-font-solid);
-  content: "\e552";
-  color: #ec6c70;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  }
-
-  .obdisconnect:before {
-  font: var(--fa-font-solid);
-  content: "\e552";
-  color: #ec6c70;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  } 
-
-  .obdisconnect.is-active:before {
-  font: var(--fa-font-solid);
-  content: "\e552";
-  color: #ec6c70;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  } */
 
 
 /* NEW STYLES FOR BUTTONS FROM CODEPEN */
 
 .btn {
-	width: 250px;
+	width: 220px;
 	border: none;
 	border-radius: 7px;
-	font-family: 'Lato';
+	font-family: 'Roboto Condensed', 'Roboto', Helvetica;
 	font-size: inherit;
 	color: inherit;
 	background: none;
@@ -368,7 +191,7 @@ background: rgba(255,255,255,0.3);
 	margin: 5px 5px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	font-weight: 700;
+	font-weight: 400;
 	outline: none;
 	position: relative;
 	-webkit-transition: all 0.3s;
@@ -582,5 +405,174 @@ background: rgba(255,255,255,0.3);
   }
 
 
+/*.btn-txt{
+	padding-left: 10px;
+	display: inline-block;
+}
+  
+  .icon::before {
+    display: inline-block;
+     text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
 
+  .playerbtn {
+    cursor: pointer;
+    height: 30px;
+    font-size: 18px;
+    min-width: 150px;
+    max-width: 250px;
+    background-color: transparent;
+    border: none;
+    align-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .playerbtn button{
+    align-content: center;
+  }
+
+   .ibcamera-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f03d";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .ibcamera-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f4e2";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .obcamera-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f03d";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .obcamera-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f4e2";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .ibmic-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f130";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .ibmic-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f131";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+	
+  .obmic-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f130";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .obmic-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f131";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+ .iboutput-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f028";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .iboutput-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f6a9";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .oboutput-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f028";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .oboutput-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f6a9";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .ibfullscreen-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f065";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .ibfullscreen-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f065";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .obfullscreen-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f065";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .obfullscreen-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f065";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+
+  .ibdisconnect:before {
+  font: var(--fa-font-solid);
+  content: "\e552";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .ibisconnect.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\e552";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .obdisconnect:before {
+  font: var(--fa-font-solid);
+  content: "\e552";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .obdisconnect.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\e552";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } */
 

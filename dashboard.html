@@ -46,7 +46,7 @@
           <div class="inbound_session_btns" align="center">
           <button class="btn btn-standard btn-sep iboutput-tog" id="ib_amute_btn_txt" onclick="ib_txttog1()">Mute Courtroom</button>
           <button class="btn btn-standard btn-sep ibcamera-tog" id="ib_vmute_btn_txt" onclick="ib_txttog2()">Mute Camera</button>
-          <button class="btn btn-standard btn-sep ibmic-tog" id="ib_mmute_btn_txt" onclick="ib_txttog3()">Mute Your Mic</button><br>
+          <button class="btn btn-standard btn-sep ibmic-tog" id="ib_mmute_btn_txt" onclick="ib_txttog3()">Mute Mic</button><br>
           <button class="btn btn-special btn-sep ibfullscreen-tog" id="ibfullscreen-tog">Go Fullscreen</button>
           <button class="btn btn-admin btn-sep ibdisconnect" id="ibdisconnect" onclick="ib_rtc.disconnect()">Leave Courtroom</button>
 
@@ -57,7 +57,7 @@
           <div class="outbound_session_btns" align="center">
           <button class="btn btn-standard btn-sep oboutput-tog" id="ob_amute_btn_txt" onclick="ob_txttog1()">Mute Session</button>
           <button class="btn btn-standard btn-sep obcamera-tog" id="ob_vmute_btn_txt" onclick="ob_txttog2()">Mute Camera</button>
-          <button class="btn btn-standard btn-sep obmic-tog" id="ob_mmute_btn_txt" onclick="ob_txttog3()">Mute Your Mic</button><br>
+          <button class="btn btn-standard btn-sep obmic-tog" id="ob_mmute_btn_txt" onclick="ob_txttog3()">Mute Mic</button><br>
            <!-- <button class="btn btn-special btn-sep obfullscreen-tog" id="obfullscreen-tog">Go Fullscreen</button><br> -->
           <button class="btn btn-admin btn-sep obdisconnect" id="obdisconnect" onclick="ob_rtc.disconnect()">Leave Session</button>
           </div>
@@ -263,7 +263,7 @@ function ob_txttog2() {
 }
 
 function ob_txttog3() {
-  var ob_mmute_btn_txt = document.getElementById("ib_mmute_btn_txt");
+  var ob_mmute_btn_txt = document.getElementById("ob_mmute_btn_txt");
   if (ob_mmute_btn_txt.innerHTML === "Mute Your Mic") {
     ob_mmute_btn_txt.innerHTML = "Unmute Your Mic";
   } else {
