@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us" >
+  <head>
+    <meta charset="utf-8">
+    <title>Interpreter Dashboard - United States Courts</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="css/interpreter-dashboard.css">
+    <script type="text/javascript" src="https://pex-gcc.com/static/webrtc/js/pexrtc.js"></script>
+    <script type="text/javascript" src="js/intdb.js"></script>
+    <script type="text/javascript">
+      window.onload = function()
+      {
+        //specific configuration of this page 
+        ibinitialise("pex-gcc.com", "1235063748@pexip.com", "Interpreter", "1200", "");
+        obinitialise("pex-gcc.com", "uscourts-esp", "Interpreter", "", "2022");
+
+        document.getElementById("ib_vmute_btn_txt").click();
+        document.getElementById("ib_mmute_btn_txt").click();
+        document.getElementById("ob_amute_btn_txt").click();
+        document.getElementById("ob_vmute_btn_txt").click();
+      }
+    </script>
+  </head>
+  <body>
+    <div class="framework">
+      <div class="parent">
+        <div class="header" align="center">
+          <img src="img/USCourtsLogoPlain.png">
+        </div>
+        <div class="gutterleft"></div>
+
+        <div class="inboundprogram" align="center">
+          <div class="controlsType">Live Courtroom Feed</div>
+          <video id="ib_video" autoplay="autoplay" poster="img/RE4NCGe.gif"></video>
+        </div>
+        <div class="pillarmiddle"></div>
+
+        <div class="outboundprogram" align="center">
+          <div class="controlsType">Outbound Language Broadcast</div>
+          <video id="ob_video" autoplay="autoplay" poster="img/RE4NCGe.gif"></video>
+        </div>
+        <div class="gutterright"></div>
+
+        <div class="inboundcontrols"> 
+          <div class="inbound_session_btns" align="center">
+          <button class="btn btn-standard btn-sep iboutput-tog" id="ib_amute_btn_txt" onclick="ib_txttog1()">Mute Courtroom</button>
+          <button class="btn btn-standard btn-sep ibcamera-tog" id="ib_vmute_btn_txt" onclick="ib_txttog2()">Mute Camera</button>
+          <button class="btn btn-standard btn-sep ibmic-tog" id="ib_mmute_btn_txt" onclick="ib_txttog3()">Mute Your Mic</button><br>
+          <button class="btn btn-special btn-sep ibfullscreen-tog" id="ibfullscreen-tog">Go Fullscreen</button>
+          <button class="btn btn-admin btn-sep ibdisconnect" id="ibdisconnect" onclick="ib_rtc.disconnect()">Leave Courtroom</button>
+
+          </div> 
+        </div>
+
+        <div class="outboundcontrols">
+          <div class="outbound_session_btns" align="center">
+          <button class="btn btn-standard btn-sep oboutput-tog" id="ob_amute_btn_txt" onclick="ob_txttog1()">Mute Session</button>
+          <button class="btn btn-standard btn-sep obcamera-tog" id="ob_vmute_btn_txt" onclick="ob_txttog2()">Mute Camera</button>
+          <button class="btn btn-standard btn-sep obmic-tog" id="ob_mmute_btn_txt" onclick="ob_txttog3()">Mute Your Mic</button><br>
+           <!-- <button class="btn btn-special btn-sep obfullscreen-tog" id="obfullscreen-tog">Go Fullscreen</button><br> -->
+          <button class="btn btn-admin btn-sep obdisconnect" id="obdisconnect" onclick="ob_rtc.disconnect()">Leave Session</button>
+          </div>
+  
+          <!-- <div id="statusindicator"><div class="circle pulse red"></div></div> -->
+        </div>
+        <div class="footer"></div>
+      </div>
+    </div>  
+
+
+<script type="text/javascript">
+
+// ~~~~~ Video Controls and Text for the Inbound and Outbound ~~~~~~~~~~ //
+
+var ib_vid_tog = document.querySelector('.ibcamera-tog');
+var ib_mic_tog = document.querySelector('.ibmic-tog');
+var ib_output_tog = document.querySelector('.iboutput-tog');
+var ib_disc_tog = document.querySelector('.ibdisconnect');
+var ib_fullscreen_tog = document.querySelector('.ibfullscreen-tog');
+var ib_media_stage = document.getElementById("ib_video");
+var ib_fsVidButton = document.getElementById('ibfullscreen-tog');
+var ib_video;
+
+var ob_vid_tog = document.querySelector('.obcamera-tog');
+var ob_mic_tog = document.querySelector('.obmic-tog');
+var ob_output_tog = document.querySelector('.oboutput-tog');
+var ob_disc_tog = document.querySelector('.obdisconnect');
+var ob_fullscreen_tog = document.querySelector('.obfullscreen-tog');
+var ob_media_stage = document.getElementById("ob_video");
+var ob_fsVidButton = document.getElementById('obfullscreen-tog');
+var ob_video;
+
+// Mute and Unmute Video Inputs //
+  
+  ib_vid_tog.addEventListener('click', function(){
+    ib_muteVideo = ib_rtc.muteVideo();
+    ib_vid_tog.classList.toggle("is-active");
+});
+
+ob_vid_tog.addEventListener('click', function(){
+    ob_muteVideo = ob_rtc.muteVideo();
+    ob_vid_tog.classList.toggle("is-active");
+});
+
+// Mute and Unmute Microphone Inputs //
+
+ib_mic_tog.addEventListener('click', function(){
+  ib_muteAudio = ib_rtc.muteAudio();
+  ib_mic_tog.classList.toggle("is-active") 
+});
+
+ob_mic_tog.addEventListener('click', function(){
+  ob_muteAudio = ob_rtc.muteAudio();
+  ob_mic_tog.classList.toggle("is-active") 
+});
+
+// Mute and Unmute Audio Listening Devices//
+
+var ib_media_stage = document.getElementById("ib_video");
+ib_media_stage.muted = false
+ib_output_tog.addEventListener('click', function(){
+  ib_output_tog.classList.toggle("is-active");
+  if (ib_media_stage.muted === true) {
+      ib_media_stage.muted = false;
+    }
+    else if (ib_media_stage.muted === false) {
+      ib_media_stage.muted = true;
+    }
+});
+
+var ob_media_stage = document.getElementById("ob_video");
+ob_media_stage.muted = false
+ob_output_tog.addEventListener('click', function(){
+  ob_output_tog.classList.toggle("is-active");
+  if (ob_media_stage.muted === true) {
+      ob_media_stage.muted = false;
+    }
+    else if (ob_media_stage.muted === false) {
+      ob_media_stage.muted = true;
+    }
+});
+
+// FullScreen //
+
+var requestFullscreen = function (ele) {
+  if (ele.requestFullscreen) {
+    ele.requestFullscreen();
+  } else if (ele.webkitRequestFullscreen) {
+    ele.webkitRequestFullscreen();
+  } else if (ele.mozRequestFullScreen) {
+    ele.mozRequestFullScreen();
+  } else if (ele.msRequestFullscreen) {
+    ele.msRequestFullscreen();
+  } else {
+    console.log('Fullscreen API is not supported.');
+  }
+};
+
+var exitFullscreen = function () {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if (document.msExitFullscreen) {
+    document.msExitFullscreen();
+  } else {
+    console.log('Fullscreen API is not supported.');
+  }
+};
+
+ib_fsVidButton.addEventListener('click', function(e) {
+  e.preventDefault();
+  requestFullscreen(ib_video);
+});
+
+ob_fsVidButton.addEventListener('click', function(e) {
+  e.preventDefault();
+  requestFullscreen(ob_video);
+});
+
+
+//Disconnect //
+
+ib_disc_tog.addEventListener('click', () => {
+    ib_disc_tog.classList.toggle("is-active");
+});
+
+ob_disc_tog.addEventListener('click', () => {
+    ob_disc_tog.classList.toggle("is-active");
+});
+
+/*function ib_stepOut() {
+  ib_txttog5();
+  ib_rtc.disconnect();
+}*/
+
+
+// Changing Text Labels on Buttons 
+
+function ib_txttog1() {
+  var ib_amute_btn_txt = document.getElementById("ib_amute_btn_txt");
+  if (ib_amute_btn_txt.innerHTML === "Mute Courtroom") {
+    ib_amute_btn_txt.innerHTML = "Unmute Courtroom";
+  } else {
+    ib_amute_btn_txt.innerHTML = "Mute Courtroom";
+  }
+}
+
+function ib_txttog2() {
+  var ib_vmute_btn_txt = document.getElementById("ib_vmute_btn_txt");
+  if (ib_vmute_btn_txt.innerHTML === "Mute Camera") {
+    ib_vmute_btn_txt.innerHTML = "Unmute Camera";
+  } else {
+    ib_vmute_btn_txt.innerHTML = "Mute Camera";
+  }
+}
+
+function ib_txttog3() {
+  var ib_mmute_btn_txt = document.getElementById("ib_mmute_btn_txt");
+  if (ib_mmute_btn_txt.innerHTML === "Mute Mic") {
+    ib_mmute_btn_txt.innerHTML = "Unmute Mic";
+  } else {
+    ib_mmute_btn_txt.innerHTML = "Mute Mic";
+  }
+}
+/*function ib_txttog4() {
+  var ib_fs_btn_txt = document.getElementById("ib_fs_btn_txt");
+  if (ib_fs_btn_txt.innerHTML === "Mute Courtroom") {
+    ib_fs_btn_txt.innerHTML = "Unmute Courtroom";
+  } else {
+    ib_fs_btn_txt.innerHTML = "Mute Courtroom";
+  }
+} */
+
+function ib_txttog5() {
+  var ib_door_btn_txt = document.getElementById("ib_door_btn_txt");
+  if (ib_door_btn_txt.innerHTML === "Leave Courtroom") {
+    ib_door_btn_txt.innerHTML = "Enter Courtroom";
+  } else {
+    ib_door_btn_txt.innerHTML = "Leave Courtroom";
+  }
+}
+
+function ob_txttog1() {
+  var ob_amute_btn_txt = document.getElementById("ob_amute_btn_txt");
+  if (ob_amute_btn_txt.innerHTML === "Mute Session") {
+    ob_amute_btn_txt.innerHTML = "Unmute Session";
+  } else {
+    ob_amute_btn_txt.innerHTML = "Mute Session";
+  }
+}
+
+function ob_txttog2() {
+  var ob_vmute_btn_txt = document.getElementById("ob_vmute_btn_txt");
+  if (ob_vmute_btn_txt.innerHTML === "Mute Camera") {
+    ob_vmute_btn_txt.innerHTML = "Unmute Camera";
+  } else {
+    ob_vmute_btn_txt.innerHTML = "Mute Camera";
+  }
+}
+
+function ob_txttog3() {
+  var ob_mmute_btn_txt = document.getElementById("ib_mmute_btn_txt");
+  if (ob_mmute_btn_txt.innerHTML === "Mute Your Mic") {
+    ob_mmute_btn_txt.innerHTML = "Unmute Your Mic";
+  } else {
+    ob_mmute_btn_txt.innerHTML = "Mute Your Mic";
+  }
+}
+/*function ib_txttog4() {
+  var ib_fs_btn_txt = document.getElementById("ib_fs_btn_txt");
+  if (ib_fs_btn_txt.innerHTML === "Mute Courtroom") {
+    ib_fs_btn_txt.innerHTML = "Unmute Courtroom";
+  } else {
+    ib_fs_btn_txt.innerHTML = "Mute Courtroom";
+  }
+} */
+
+function ob_txttog5() {
+  var ob_door_btn_txt = document.getElementById("ob_door_btn_txt");
+  if (ob_door_btn_txt.innerHTML === "Leave Session") {
+    ob_door_btn_txt.innerHTML = "Enter Session";
+  } else {
+    ob_door_btn_txt.innerHTML = "Leave Session";
+  }
+}
+
+
+
+</script>
+
+</body>
+</html>

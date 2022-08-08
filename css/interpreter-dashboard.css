@@ -1,0 +1,586 @@
+@import url('https://fonts.googleapis.com/css2?family=Ovo&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400&family=Roboto+Serif:opsz,wght@8..144,500&display=swap');
+
+
+body {
+	padding: 0;
+	margin: 0;
+	background-color: #666;
+	background-image: url('../img/flatmosphere-no-star.jpg');
+	/*background-position: 0px 100px;
+	background-repeat: no-repeat; */
+}
+
+video{
+	postion: relative;
+	width: 100%;
+	display: inline-block;
+	border:  solid 2px #333;
+	border-radius: 10px;
+
+}
+
+.framework {
+
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background-image: linear-gradient(to right, rgba(71,78,104,0.15), rgba(71,78,104,0.53));	
+}
+
+.parent {
+display: grid;
+grid-template-columns: 5% 1fr 2% 1fr 5%;
+grid-template-rows: 10% repeat(2, 1fr) 10%;
+grid-column-gap: 3px;
+grid-row-gap: 10px;
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+}
+
+.header { grid-area: 1 / 1 / 2 / 6; }
+.gutterleft { grid-area: 2 / 1 / 4 / 2; }
+.inboundprogram { grid-area: 2 / 2 / 3 / 3; }
+.pillarmiddle { grid-area: 2 / 3 / 4 / 4; }
+.outboundprogram { grid-area: 2 / 4 / 3 / 5; }
+.gutterright { grid-area: 2 / 5 / 4 / 6; }
+.inboundcontrols { grid-area: 3 / 2 / 4 / 3; }
+.outboundcontrols { grid-area: 3 / 4 / 4 / 5; }
+.footer { grid-area: 4 / 1 / 5 / 6; }
+
+
+.header {
+
+}
+	.header img {height: 50px; padding-top: 20px;}
+
+
+.gutterleft {
+
+}
+
+.inboundprogram {
+
+}
+
+.pillarmiddle {
+
+}
+
+.outboundprogram {
+
+}
+
+.gutterright {
+
+}
+
+.inboundcontrols {
+border:  solid 2px #333;
+border-radius: 10px;
+}
+
+.outboundcontrols {
+border:  solid 2px #333;
+border-radius: 10px;
+}
+
+.footer {
+
+}
+
+/* Indicator Lights */
+
+#statusindicator{
+	padding: 20px;
+}
+
+.red {
+	background-color: #dc3838;
+}
+
+.circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 1px 1px #0000001a;
+}
+
+.pulse {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
+
+/* CONTROLS */
+.controlsType{
+font-family: Ovo, serif;
+font-weight: bold;
+font-size: 30px;
+color: #121212;
+text-align: center;
+letter-spacing: 2px;
+text-shadow: 2px 4px 3px rgba(0,0,0,0.3), 0px -2px 5px rgba(255,255,255,0.3);
+padding: 10px;
+}
+
+.inboundControls
+{
+
+}
+
+
+
+
+.outboundControls
+{
+
+
+}
+
+.videoControls {
+  width:  100%;
+  height: 50px;
+  background-color: #333;
+  cursor:  pointer;
+  /* border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+   background-image: linear-gradient(180deg, #333 0%, #000 127%); */
+  background: rgba(255,255,255,0.3);
+  position: absolute;
+  display: inline-block;
+  bottom: 0;
+  left: 0;
+}
+
+.inbound_session_btns{
+cursor:  pointer;
+width: 100%;
+height: 100%;
+display: inline-block;
+background: rgba(255,255,255,0.3);
+}
+
+.outbound_session_btns{
+cursor:  pointer;
+width: 100%;
+height: 100%;
+display: inline-block;
+background: rgba(255,255,255,0.3);
+}
+
+/*.btn-txt{
+	padding-left: 10px;
+	display: inline-block;
+}
+  
+  .icon::before {
+    display: inline-block;
+     text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .playerbtn {
+    cursor: pointer;
+    height: 30px;
+    font-size: 18px;
+    min-width: 150px;
+    max-width: 250px;
+    background-color: transparent;
+    border: none;
+    align-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .playerbtn button{
+    align-content: center;
+  }
+
+   .ibcamera-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f03d";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .ibcamera-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f4e2";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .obcamera-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f03d";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .obcamera-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f4e2";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .ibmic-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f130";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .ibmic-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f131";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+	
+  .obmic-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f130";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .obmic-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f131";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+ .iboutput-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f028";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .iboutput-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f6a9";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .oboutput-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f028";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .oboutput-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f6a9";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .ibfullscreen-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f065";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .ibfullscreen-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f065";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .obfullscreen-tog:before {
+  font: var(--fa-font-solid);
+  content: "\f065";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .obfullscreen-tog.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\f065";
+  color: #FFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+
+  .ibdisconnect:before {
+  font: var(--fa-font-solid);
+  content: "\e552";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .ibisconnect.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\e552";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  .obdisconnect:before {
+  font: var(--fa-font-solid);
+  content: "\e552";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } 
+
+  .obdisconnect.is-active:before {
+  font: var(--fa-font-solid);
+  content: "\e552";
+  color: #ec6c70;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  } */
+
+
+/* NEW STYLES FOR BUTTONS FROM CODEPEN */
+
+.btn {
+	width: 250px;
+	border: none;
+	border-radius: 7px;
+	font-family: 'Lato';
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 12px 12px;
+	display: inline-block;
+	margin: 5px 5px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+/* Pseudo elements for icons */
+.btn:before {
+	font-family: 'FontAwesome';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+/* Icon separator */
+.btn-sep {
+	padding: 10px 15px 10px 40px;
+}
+
+.btn-sep:before {
+	background: rgba(0,0,0,0.15);
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+}
+
+/* Special Blue Buttons */
+.btn-special {
+	background: #3498db;
+	color: #fff;
+}
+
+.btn-special:hover {
+	background: #2980b9;
+}
+
+.btn-special:active {
+	background: #2980b9;
+	top: 2px;
+}
+
+.btn-special:before {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	line-height: 2.5;
+	font-size: 100%;
+	width: 30px;
+}
+
+/* Standard Green and Red Buttons */
+.btn-standard {
+	background: #2ecc71;
+	color: #fff;
+}
+
+.btn-standard:hover {
+	background: #27ae60;
+}
+
+.btn-standard:active {
+	background: #27ae60;
+	top: 2px;
+}
+
+.btn-standard:before {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	line-height: 2.5;
+	font-size: 100%;
+	width: 30px;
+}
+
+.btn-standard.is-active
+{
+	background: #e74c3c;
+}
+
+
+/* Black Admin buttons */
+.btn-admin {
+	background: #34495e;
+	color: #fff;
+}
+
+.btn-admin:hover {
+	background: #2c3e50;
+}
+
+.btn-admin:active {
+	background: #2c3e50;
+	top: 2px;
+}
+
+.btn-admin:before {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	line-height: 2.5;
+	font-size: 100%;
+	width: 30px;
+}
+
+/* Icons */
+
+.iboutput-tog:before {
+	content: "\f028";
+}
+
+.iboutput-tog.is-active:before {
+	content: "\f6a9";
+}
+
+.ibcamera-tog:before {
+  content: "\f03d";
+  } 
+
+  .ibcamera-tog.is-active:before {
+  content: "\f4e2";
+  }
+
+  .obcamera-tog:before {
+  content: "\f03d";
+  } 
+
+  .obcamera-tog.is-active:before {
+  content: "\f4e2";
+  }
+
+  .ibmic-tog:before {
+  content: "\f130";
+  } 
+
+  .ibmic-tog.is-active:before {
+  content: "\f131";
+  }
+	
+  .obmic-tog:before {
+  content: "\f130";
+  } 
+
+  .obmic-tog.is-active:before {
+  content: "\f131";
+  }
+
+ .iboutput-tog:before {
+	content: "\f028";
+}
+
+.iboutput-tog.is-active:before {
+	content: "\f6a9";
+}
+
+  .oboutput-tog:before {
+  	content: "\f028";
+  } 
+
+  .oboutput-tog.is-active:before {
+  content: "\f6a9";
+  }
+
+  .ibfullscreen-tog:before {
+  content: "\f065";
+  } 
+
+  .ibfullscreen-tog.is-active:before {
+  content: "\f065";
+  }
+
+  .obfullscreen-tog:before {
+  content: "\f065";
+  } 
+
+  .obfullscreen-tog.is-active:before {
+  content: "\f065";
+  }
+
+  .ibdisconnect:before {
+  content: "\e552";
+  } 
+
+  .ibisconnect.is-active:before {
+  content: "\e552";
+  }
+
+  .obdisconnect:before {
+  content: "\e552";
+  } 
+
+  .obdisconnect.is-active:before {
+  content: "\e552";
+  }
+
+
+
+
