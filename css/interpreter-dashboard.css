@@ -28,7 +28,7 @@ top: 0;
 bottom: 0;
 left: 0;
 right: 0;
-background-image: linear-gradient(to right, rgba(71,78,104,0.15), rgba(71,78,104,0.53));	
+background:linear-gradient(90deg, rgba(58, 85, 122, 0.6) 0%, rgba(210, 217, 218, 0.6) 50%, rgba(79, 106, 109, 0.6) 100%);	
 }
 
 .parent {
@@ -230,23 +230,25 @@ cursor:  pointer;
 }
 
 .btn-sep:before {
-	background: rgba(0,0,0,0.15);
+	background: rgba(0,0,0,0.12);
+	border-right: solid 1px #999;
 	border-top-left-radius: 7px;
 	border-bottom-left-radius: 7px;
 }
 
 /* Special Blue Buttons */
 .btn-special {
-	background: #3498db;
-	color: #fff;
+	background: #cdd4dc;
+	color: #3a557a;
+	border:  solid 1px #3a557a;
 }
 
 .btn-special:hover {
-	background: #2980b9;
+	background: #aab9c9;
 }
 
 .btn-special:active {
-	background: #2980b9;
+	background: #cdd4dc;
 	top: 2px;
 }
 
@@ -257,21 +259,22 @@ cursor:  pointer;
 	top: 0;
 	line-height: 2.5;
 	font-size: 100%;
-	width: 30px;
+	width: 40px;
 }
 
 /* Standard Green and Red Buttons */
 .btn-standard {
-	background: #2ecc71;
-	color: #fff;
+	background: #d4d9ca;
+	color: #576b30;
+	border: solid 1px #576b30;
 }
 
 .btn-standard:hover {
-	background: #27ae60;
+	background: #acb894;
 }
 
 .btn-standard:active {
-	background: #27ae60;
+	background: #acb894;
 	top: 2px;
 }
 
@@ -280,18 +283,20 @@ cursor:  pointer;
 	height: 100%;
 	left: 0;
 	top: 0;
-	line-height: 2.5;
-	font-size: 100%;
-	width: 30px;
+	line-height: 2.0;
+	font-size: 120%;
+	width: 40px;
 }
 
 .btn-standard.is-active
 {
-	background: #e74c3c;
+	color: #9a3738;
+	border:  solid 1px #9a3738;
+	background: #e5cbcd;
 }
 
 
-/* Black Admin buttons */
+/* Leave Courtroom */
 .btn-admin {
 	background: #34495e;
 	color: #fff;
@@ -313,7 +318,32 @@ cursor:  pointer;
 	top: 0;
 	line-height: 2.5;
 	font-size: 100%;
-	width: 30px;
+	width: 40px;
+}
+
+/* Leave Interpreter Session */
+.btn2-admin {
+	background: #34495e;
+	color: #fff;
+}
+
+.btn2-admin:hover {
+	background: #2c3e50;
+}
+
+.btn2-admin:active {
+	background: #2c3e50;
+	top: 2px;
+}
+
+.btn2-admin:before {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	line-height: 2.5;
+	font-size: 100%;
+	width: 40px;
 }
 
 /* Icons */
@@ -351,15 +381,15 @@ cursor:  pointer;
   }
 	
   .obmic-tog:before {
-  content: "\f130";
+  content: "\f3c9";
   } 
 
   .obmic-tog.is-active:before {
-  content: "\f131";
+  content: "\f539";
   }
 
  .iboutput-tog:before {
-	content: "\f028";
+	content: "\f58f";
 }
 
 .iboutput-tog.is-active:before {
@@ -391,11 +421,11 @@ cursor:  pointer;
   }
 
   .ibdisconnect:before {
-  content: "\e552";
+  content: "\f24e";
   } 
 
   .ibisconnect.is-active:before {
-  content: "\e552";
+  content: "\f24e";
   }
 
   .obdisconnect:before {
