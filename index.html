@@ -8,25 +8,77 @@
   </head>
   <body>
 
-<div class="holster">
-<form action="dashboard.html" method="get" class="signup-form">
+<div class="idxparent">
+
+  <div class="idxheader" align="center">
+    <img src="img/USCourtsLogoPlain.png">
+  </div>
+  <div class="idxleft"></div>
+  <div class="idxmain">
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <div align="center">
+                        <h3>United States Courts <br> Interpreter Dashboard</h3>
+                
+                        <h5>Complete the form below using the information you received in your calendar invite</h5>
+                      </div>
+
+                          <form action="dashboard.html" method="get" class="signup-form">
+                            <p>Enter MS Teams Video ID</p>
+                            <input name="sessionid" id="videoID" class="form-input" type="text" placeholder="Session ID Number" /> <br>
+                            <p>Select Language to be Translated</p>
+                            <select name="languageid" id="langID" class="form-input" placeholder="select language" />
+                                <option value="esp">Spanish (reg)</option>
+                                <option value="fr">French (reg)</option>
+                                <option value="kr">Korean</option>
+                                <option value="cmd">Chinese (Mandarin)</option>
+                                <option value="ccn">Chinese (Cantonese)</option>
+                              </select>
+
+                              <button type="submit" class="btn btn-primary">Start Session</button>
+                          </form>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="idxright"></div>
+  <div class="idxfooter"></div>
+
+</div>
+
+
+<!-- <form action="dashboard.html" method="get" class="signup-form">
 <div class="form">
 
   <div class="form-header" align="center">
-        <img src="img/watermark_icon.png"><h1></h1>
+        <img src="img/USCourtsLogoPlain.png">
   </div>
 
     <div class="form-body">
 
       <div class="form-group">
         <label for="videoID" class="label-title"></label>
-        <input name="sessionalias" id="videoID" class="form-input" type="text" placeholder="Session ID Number" />
-        <button type="submit" class="btn">join</button>
+        <input name="sessionid" id="videoID" class="form-input" type="text" placeholder="Session ID Number" />
+        <label for="languageID" class="label-title"></label>
+        <select name="languageid" id="langID" class="form-input" type="text" placeholder="select language" />
+          <option value="esp">Spanish (reg)</option>
+          <option value="fr">French (reg)</option>
+          <option value="kr">Korean</option>
+          <option value="cmd">Chinese (Mandarin)</option>
+          <option value="ccn">Chinese (Cantonese)</option>
+        </select>  
+        <button type="submit" class="btn">Start Session</button>
+
       </div>
 
     </div>
  </div>
 </form> 
-</div>
+</div> -->
 </body>
 </html>

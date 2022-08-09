@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ovo&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400&family=Roboto+Serif:opsz,wght@8..144,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
 
 
 body {
@@ -405,7 +407,207 @@ cursor:  pointer;
   }
 
 
-/*.btn-txt{
+
+
+/*~~~~ INDEX PAGE STUFF ~~~~~~~~*/
+
+.idxparent {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 120px 1fr 120px;
+grid-column-gap: 5px;
+grid-row-gap: 5px;
+font-family: 'Poppins', sans-serif;
+font-weight: 400;
+-webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+-moz-osx-font-smoothing: grayscale;
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+overflow: "hidden";
+}
+
+.idxheader { grid-area: 1 / 1 / 2 / 4; }
+.idxleft { grid-area: 2 / 1 / 3 / 2; }
+.idxmain { grid-area: 2 / 2 / 3 / 3; }
+.idxright { grid-area: 2 / 3 / 3 / 4; }
+.idxfooter { grid-area: 3 / 1 / 4 / 4; }
+
+
+.idxheader img {
+
+	height: 50px; 
+	padding-top: 20px;
+}
+
+
+
+.form-holder {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100%;
+      background-color: #3a557a;
+}
+
+
+.form-holder{
+	border-radius: 15px;
+}
+
+.form-holder .form-content {
+    position: relative;
+    text-align: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 60px;
+}
+
+.form-content .form-items {
+    border: 3px solid #fff;
+    padding: 30px;
+    display: inline-block;
+    width: 100%;
+    min-width: 540px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-align: left;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.form-content h3 {
+    color: #fff;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/*.form-content h3.form-title {
+    margin-bottom: 30px;
+}*/
+
+.form-content h5{
+  color: #FFF;
+  padding-bottom: 0px;
+  text-align: left;
+}
+
+.form-content p {
+    color: #fff;
+    text-align: left;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+
+
+.form-content label, .was-validated .form-check-input:invalid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label{
+    color: #fff;
+}
+
+.form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content select {
+    width: 90%;
+    padding: 10px 15px;
+    text-align: left;
+    border: 0;
+    outline: 0;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    color: #8D8D8D;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    margin-top: 3px;
+    margin-bottom: 5px;
+}
+
+
+
+
+.btn-primary{
+    background-color: #6C757D;
+    color: #FFF;
+    outline: none;
+    border: 0px;
+    margin-top: 20px;
+    box-shadow: none;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active{
+    background-color: #495056;
+    outline: none !important;
+    border: none !important;
+     box-shadow: none;
+}
+
+.form-content textarea {
+    position: static !important;
+    width: 100%;
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-align: left;
+    background-color: #fff;
+    border: 0;
+    font-size: 15px;
+    font-weight: 300;
+    color: #8D8D8D;
+    outline: none;
+    resize: none;
+    height: 120px;
+    -webkit-transition: none;
+    transition: none;
+    margin-bottom: 14px;
+}
+
+.form-content textarea:hover, .form-content textarea:focus {
+    border: 0;
+    background-color: #ebeff8;
+    color: #8D8D8D;
+}
+
+.mv-up{
+    margin-top: -9px !important;
+    margin-bottom: 8px !important;
+}
+
+.invalid-feedback{
+    color: #ff606e;
+}
+
+.valid-feedback{
+   color: #2acc80;
+}
+
+
+
+
+
+
+/*
+
+
+ORIGINAL VIDEO CONTROL BUTTONS
+
+
+
+
+.btn-txt{
 	padding-left: 10px;
 	display: inline-block;
 }

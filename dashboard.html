@@ -11,9 +11,16 @@
     <script type="text/javascript">
       window.onload = function()
       {
+        //Loading the sessions with the information provided in the index page
+        var urlSearchParams = new URLSearchParams(window.location.search);
+        var params = Object.fromEntries(urlSearchParams.entries());
+        var sessionid = (params.sessionid);
+        var languageid = (params.languageid);
+
+
         //specific configuration of this page 
-        ibinitialise("pex-gcc.com", "1235063748@pexip.com", "Interpreter", "1200", "");
-        obinitialise("pex-gcc.com", "uscourts-esp", "Interpreter", "", "2022");
+        ibinitialise("pex-gcc.com", sessionid + "@pexip.com", "Interpreter", "1200", "");
+        obinitialise("pex-gcc.com", "usc-" + languageid + sessionid, "Interpreter", "", "2022");
 
         document.getElementById("ib_vmute_btn_txt").click();
         document.getElementById("ib_mmute_btn_txt").click();
@@ -26,7 +33,7 @@
     <div class="framework">
       <div class="parent">
         <div class="header" align="center">
-          <img src="img/USCourtsLogoPlain.png">
+          <a href="index.html"><img src="img/USCourtsLogoPlain.png"></a>
         </div>
         <div class="gutterleft"></div>
 
