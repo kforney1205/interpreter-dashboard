@@ -624,7 +624,9 @@ overflow: "hidden";
    color: #2acc80;
 }
 
-
+.inv {
+    display: none;
+}
 
 
 

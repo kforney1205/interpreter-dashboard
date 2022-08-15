@@ -28,16 +28,29 @@
 
                           <form action="dashboard.html" method="get" class="signup-form">
                             <p>Which Platfrom is Hosting the Case?</p>
-                            <select name="platformuri" id="platformuri" class="form-input" placeholder="Choose Platfrom" />
+                            <select name="platformuri" id="platformuri" class="form-input" placeholder="Choose Platfrom"/>
+                                <option value=""> -- Make Selection -- </option>
                                 <option value="pex-gcc.com">Pexip Virtual Courts</option>
                                 <option value="pexip.com">Microsoft Teams</option>
                                 <option value="zoomcrc.com">Zoom</option>
                                 <option value="webex.com">WebEx</option>
                               </select>
-                            <p>Enter MS Teams Video ID</p>
+                            <p>Enter Meeting ID</p>
                             <input name="sessionid" id="videoID" class="form-input" type="text" placeholder="Session ID Number" /> <br>
+
+                            <div id="zoomcrc.com" class="inv">
+                              <p>Enter Zoom Session Password (if needed)</p>
+                              <input name="vidsessionPassZ" id="vidsessionPassZ" class="form-input" type="text" placeholder="Enter Zoom Session Password" /><br>
+                            </div>
+
+                            <div id="webex.com" class="inv">
+                              <p>Enter Webex Session Password (if needed)</p>
+                              <input name="vidsessionPassW" id="vidsessionPassW" class="form-input" type="text" placeholder="Enter Webex Session Password" /><br>
+                            </div>
+
                             <p>Select Language to be Translated</p>
                             <select name="languageid" id="langID" class="form-input" placeholder="select language" />
+                                <option value=""> -- Choose Language -- </option>
                                 <option value="esp">Spanish (reg)</option>
                                 <option value="fr">French (reg)</option>
                                 <option value="kr">Korean</option>
@@ -57,35 +70,21 @@
   <div class="idxfooter"></div>
 
 </div>
+<script type="text/javascript">
+    document
+    .getElementById('platformuri')
+    .addEventListener('change', function () {
+        'use strict';
+        var vis = document.querySelector('.vis'),   
+        target = document.getElementById(this.value);
+            if (vis !== null) {
+            vis.className = 'inv';
+                    }
+            if (target !== null ) {
+            target.className = 'vis';
+                    }
+    });
 
-
-<!-- <form action="dashboard.html" method="get" class="signup-form">
-<div class="form">
-
-  <div class="form-header" align="center">
-        <img src="img/USCourtsLogoPlain.png">
-  </div>
-
-    <div class="form-body">
-
-      <div class="form-group">
-        <label for="videoID" class="label-title"></label>
-        <input name="sessionid" id="videoID" class="form-input" type="text" placeholder="Session ID Number" />
-        <label for="languageID" class="label-title"></label>
-        <select name="languageid" id="langID" class="form-input" type="text" placeholder="select language" />
-          <option value="esp">Spanish (reg)</option>
-          <option value="fr">French (reg)</option>
-          <option value="kr">Korean</option>
-          <option value="cmd">Chinese (Mandarin)</option>
-          <option value="ccn">Chinese (Cantonese)</option>
-        </select>  
-        <button type="submit" class="btn">Start Session</button>
-
-      </div>
-
-    </div>
- </div>
-</form> 
-</div> -->
+</script>
 </body>
 </html>
