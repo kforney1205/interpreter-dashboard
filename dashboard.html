@@ -17,11 +17,13 @@
         var sessionid = (params.sessionid);
         var languageid = (params.languageid);
         var platformuri = (params.platformuri);
-        var vidsessionPassZ = ("##" + params.vidsessionPassZ);
-        var vidsessionPassW = ("##" + params.vidsessionPassW);
+        var vidsessionPassZ = params.vidsessionPassZ ? `##${params.vidsessionPassZ}` : '';
+        var vidsessionPassW = params.vidsessionPassW ? `##${params.vidsessionPassW}` : '';
+        //var vidsessionPassZ = ("##" + params.vidsessionPassZ);
+        //var vidsessionPassW = ("##" + params.vidsessionPassW);
 
         //specific configuration of this page 
-        ibinitialise("pex-gcc.com", sessionid + "@" + platformuri, "Interpreter-" + languageid, "1200", "");
+        ibinitialise("pex-gcc.com", sessionid + vidsessionPassZ + vidsessionPassW + "@" + platformuri, "Interpreter-" + languageid, "1200", "");
         obinitialise("pex-gcc.com", "usc-" + languageid + sessionid, "Interpreter", "", "2022");
 
         document.getElementById("ib_vmute_btn_txt").click();
@@ -297,7 +299,15 @@ function ob_txttog5() {
   }
 }
 
+// Trying to Hack the Params
 
+if (typeof vidsessionPassZ === 'undefined' || vidsessionPassZ === null) {
+    // variable is undefined or null
+}
+
+if (typeof vidsessionPassW === 'undefined' || vidsessionPassZ === null) {
+    // variable is undefined or null
+}
 
 </script>
 
