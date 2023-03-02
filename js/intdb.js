@@ -85,7 +85,7 @@ function ibendCall() {
 //this.obinitialise = obinitialise;
 //this.ob_endCall = ob_endCall;
 
-/* ~~~ INBOUND ROOM SETUP AND TEARDOWN ~~~ */
+/* ~~~ OUTBOUND ROOM SETUP AND TEARDOWN ~~~ */
 
 function obfinalise(event) {
     ob_rtc.disconnect();
